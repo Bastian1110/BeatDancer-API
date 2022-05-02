@@ -15,10 +15,7 @@
     $nameCheck="SELECT * FROM Player WHERE username = '$data->name'";
     $rs = mysqli_query($conn,$nameCheck);
     $existent = mysqli_fetch_array($rs, MYSQLI_NUM);
-    if($existent[0] > 1){
-        echo "Username Already Exists";
-    }
-    else{
+    if(is_null($existent)){
         $sql = "INSERT INTO Player (username, birthdate, country, pswd, mail)
         VALUES ('".$data->name."', '".$data->birthday."', '".$data->country."', '".$data->password."', '".$data->mail."')";
 
@@ -28,6 +25,10 @@
         else {
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
         }
+        echo "Username Already Exists";
+    }
+    else{
+        echo "Username Already Exists";
     }
       
     mysqli_close($conn);

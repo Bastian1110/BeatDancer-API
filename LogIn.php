@@ -15,15 +15,10 @@
     $userCheck = "SELECT * FROM Player WHERE username = '$data->name' AND pswd = '$data->password'";
     $rs = mysqli_query($conn,$userCheck);
     $existent = mysqli_fetch_array($rs, MYSQLI_NUM);
-    if($existent[0] > 1){
-        echo "LogIn Succesfull";
-    }
-    else{
+    if(is_null($existent)){
         echo "Something went wrong";
     }
-
-  
-    
-
-    //SELECT * FROM `Player` WHERE username = "Bastian1110" AND pswd = "123"
+    else{
+        echo "LogIn Succesfull";
+    }
 ?>
