@@ -1,9 +1,9 @@
 <?php
 function conectionBD(){
-    $server = "localhost"
-    $user = "API"
-    $pass = "12345"
-    $dataBase = "BeatDancer"
+    $server = "localhost";
+    $user = "API";
+    $pass = "12345";
+    $dataBase = "BeatDancer";
 
 
     $connection = new mysqli ($server,$user,$pass,$dataBase);
@@ -12,7 +12,7 @@ function conectionBD(){
         die("Connection failed: " . $conn->connect_error);
     }
     else{
-        return $conn
+        return $conn;
     }
 }
 

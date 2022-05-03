@@ -16,9 +16,9 @@
     $rs = mysqli_query($conn,$userCheck);
     $existent = mysqli_fetch_array($rs, MYSQLI_NUM);
     if(is_null($existent)){
-        echo "Something went wrong";
+        echo "Failed";
     }
     else{
-        echo "LogIn Succesfull";
+        echo "Success";
     }
 ?>
