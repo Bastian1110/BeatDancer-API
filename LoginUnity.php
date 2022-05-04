@@ -7,8 +7,8 @@
         $passwordLog = $dataJson["password"];
         
         $servername = "localhost"; //Chamge for the server MySQL config
-        $username = "API";
-        $password = "12345";
+        $username = "phpmyadmin";
+        $password = "2022BeatDancer";
         $dbname = "BeatDancer";
 
         $conn = new mysqli($servername, $username, $password, $dbname);
@@ -19,10 +19,10 @@
         $rs = mysqli_query($conn,$userCheck);
         $existent = mysqli_fetch_array($rs, MYSQLI_NUM);
         if(is_null($existent)){
-            echo "Something went wrong";
+            echo "Failed";
         }
         else{
-            echo "LogIn Succesfull";
+            echo "Success";
         }
     }
 ?>

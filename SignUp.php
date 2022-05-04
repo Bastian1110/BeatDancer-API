@@ -3,8 +3,8 @@
     $data = json_decode($json);
 
     $servername = "localhost"; //Chamge for the server MySQL config
-    $username = "API";
-    $password = "12345";
+    $username = "phpmyadmin";
+    $password = "2022BeatDancer";
     $dbname = "BeatDancer";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
